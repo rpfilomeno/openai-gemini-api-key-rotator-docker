@@ -1,0 +1,20 @@
+{
+    "name": "Node.js",
+    "image": "mcr.microsoft.com/devcontainers/javascript-node:1-20-bullseye",
+    "forwardPorts": [
+        8990,
+        12345
+    ],
+    "containerEnv": {
+        "TZ": "Asia/Manila",
+        "TERM": "xterm-256color"
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "dbaeumer.vscode-eslint"
+            ]
+        }
+    },
+    "postCreateCommand": "cd app && npm install"
+}
