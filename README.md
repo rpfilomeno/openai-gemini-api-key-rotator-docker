@@ -1,6 +1,6 @@
-# openai-gemini-api-key-rotator
+# openai-gemini-api-key-rotator-docker
 
-Node.js proxy server for automatic API key rotation across multiple LLM providers (OpenAI, Gemini, Groq, OpenRouter, etc.). ***Zero external dependencies***.
+A Dockerized Node.js proxy server for automatic API key rotation across multiple LLM providers (OpenAI, Gemini, Groq, OpenRouter, etc.) based on the [p32929/openai-gemini-api-key-rotator](https://github.com/p32929/openai-gemini-api-key-rotator).
 
 ## Features
 
@@ -87,30 +87,6 @@ curl -X POST "http://localhost:8990/gemini/models/gemini-2.5-flash:generateConte
 
 **Note**: Replace `your-access-key` with your provider's ACCESS_KEY if configured. If no ACCESS_KEY is set for the provider, you can omit the `[ACCESS_KEY:...]` parameter entirely.
 
-## Changelog
-
-### Version 4.x.x
-- Dynamic status code configuration via headers
-- Optional ACCESS_KEY for provider-level security
-- Enhanced admin panel with improved UX
-- Auto-generated curl commands reflect the new API format
-
-**Breaking Changes**:
-- API endpoints changed from `/provider/v1/*` to `/provider/*`
-- Version suffix (`/v1`) now derived from provider's base URL configuration
-- **Migration**: Simply copy the curl command from admin panel to see the new format in action
-
-### Version 3.x.x
-- Enhanced admin panel with better UI/UX
-- No breaking changes
-
-### Version 2.x.x
-- Added admin panel for dynamic provider management
-- No breaking changes
-
-### Version 1.x.x
-- Basic API key rotation
-- OpenAI and Gemini-compatible API support
 
 ### Screenshot
 
@@ -119,6 +95,11 @@ curl -X POST "http://localhost:8990/gemini/models/gemini-2.5-flash:generateConte
 <img width="3024" height="3652" alt="Image" src="https://github.com/user-attachments/assets/21bd17c3-763c-482a-97c0-115d8b395d65" />
 
 <img width="3024" height="1714" alt="Image" src="https://github.com/user-attachments/assets/0de6654d-eea8-49ad-9c19-7f2a799b604e" />
+
+
+## Acknowledgements
+
+This project is directly based on and heavily inspired by the original work of **[p32929](https://github.com/p32929)** on their **[openai-gemini-api-key-rotator](https://github.com/p32929/openai-gemini-api-key-rotator)** project. We extend our sincere thanks for their foundational work.
 
 ## Contributing
 
@@ -131,6 +112,7 @@ Contributions are warmly welcomed and greatly appreciated! Whether it's a bug fi
 4. Submit your pull request with a clear description of changes
 
 This approach helps avoid duplicate efforts and ensures smooth collaboration. Thank you for considering contributing!
+
 
 ## License
 
