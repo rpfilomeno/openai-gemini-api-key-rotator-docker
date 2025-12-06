@@ -13,9 +13,9 @@ services:
     environment:
       - TERM=xterm-256color
       - TZ=Asia/Manila
-    # volumes:
-    #   - D:\Github\openai-gemini-api-key-rotator\app:/app
-    #entrypoint: /bin/sh /app/docker-entrypoint.sh
+    volumes:
+      - D:\Github\openai-gemini-api-key-rotator-docker\app:/app
+    entrypoint: npm start
     networks:
       - local-services
     logging:
