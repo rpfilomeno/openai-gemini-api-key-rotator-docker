@@ -3,9 +3,6 @@ services:
   openai-gemini-api-key-rotator:
     container_name: openai-gemini-api-key-rotator
     image: rpfilomeno/openai-gemini-api-key-rotator
-    # build:
-    #   context: .
-    #   dockerfile: Dockerfile
     ports:
       - "12345:8990"
     stdin_open: true
@@ -14,27 +11,10 @@ services:
       - TERM=xterm-256color
       - TZ=Asia/Manila
     volumes:
-      - D:\Github\openai-gemini-api-key-rotator-docker\app:/app
+      - ./app:/app
     entrypoint: npm start
-    networks:
-      - local-services
     logging:
       options:
         max-size: "10m"
         max-file: "3"
     restart: unless-stopped
-
-# secrets:
-#   discord:
-#     file: ./discord.secret
-
-networks:
-  local-services:
-    # Specify driver options
-    driver: bridge
-    external: true
-
-volumes:
-  D:
-    external: true
-    name: D
