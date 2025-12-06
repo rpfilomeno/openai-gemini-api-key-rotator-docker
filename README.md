@@ -32,8 +32,11 @@ docker run -d \
   --name openai-gemini-api-key-rotator \
   -p 8990:8990 \
   -e TERM=xterm-256color \
-  -e TZ=Asia/Manila \
+  -v ./app:/app \
   --restart unless-stopped \
+  --log-opt max-size=10m \
+  --log-opt max-file=3 \
+  --entrypoint "npm start" \
   rpfilomeno/openai-gemini-api-key-rotator
 ```
 
